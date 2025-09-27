@@ -1,0 +1,419 @@
+/* ===========================
+   Variables CSS para colores y fuentes
+============================== */
+
+:root {
+    --color-bg: #121212;
+    --color-primary: #0a3d62;
+    /* Azul intenso */
+    --color-primary-light: #1357a8;
+    /* Azul claro */
+    --color-accent: #f1c40f;
+    /* Dorado vibrante */
+    --color-accent-light: #ffdb4d;
+    /* Dorado suave */
+    --color-text-light: #e5e5e5;
+    --color-text-muted: #a8a8a8;
+    --color-card-bg: #1f1f1f;
+    --color-shadow-dark: rgba(10, 61, 98, 0.55);
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-speed: 0.35s;
+    --border-radius: 12px;
+}
+
+
+/* ===========================
+   Reset básico y base
+============================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-light);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+/* ===========================
+   HEADER - Barra de navegación fija y moderna
+============================== */
+
+header {
+    background-color: #1b1b1b;
+    padding: 30px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.75);
+    transition: background-color var(--transition-speed);
+}
+
+.logo h1 {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 3rem;
+    color: var(--color-accent);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    user-select: none;
+    cursor: default;
+    text-shadow: 0 0 14px var(--color-accent);
+    transition: transform 0.3s ease;
+}
+
+.logo h1:hover {
+    transform: scale(1.05);
+}
+
+
+/* Navegación */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 48px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 16px 26px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    position: relative;
+    transition: color var(--transition-speed);
+    user-select: none;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 6px;
+    left: 50%;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    transition: width 0.4s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus-visible {
+    color: var(--color-accent);
+    outline-offset: 4px;
+    outline-color: var(--color-accent-light);
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+nav ul li a:hover::after,
+nav ul li a:focus-visible::after {
+    width: 50%;
+}
+
+
+/* Submenú */
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    background-color: var(--color-card-bg);
+    border-radius: 14px;
+    min-width: 200px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+    padding: 18px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+    z-index: 20;
+}
+
+nav ul li:hover ul,
+nav ul li:focus-within ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul li ul li a {
+    padding: 14px 36px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    display: block;
+    transition: background-color 0.35s ease, color 0.35s ease;
+    border-radius: var(--border-radius);
+    user-select: none;
+}
+
+nav ul li ul li a:hover,
+nav ul li ul li a:focus-visible {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-accent-light);
+    box-shadow: 0 0 16px var(--color-accent-light);
+    outline: none;
+}
+
+
+/* ===========================
+   HERO - Sección destacada principal
+============================== */
+
+.hero {
+    max-width: 980px;
+    margin: 90px auto 110px;
+    padding: 100px 80px;
+    background: linear-gradient(135deg, rgba(15, 52, 100, 0.9), rgba(6, 25, 50, 0.9)), url('IMAGENESDEPERFUMES/hero-bg.jpg') center/cover no-repeat;
+    border-radius: 26px;
+    box-shadow: 0 0 68px rgba(15, 52, 100, 0.9);
+    color: #f5f5dc;
+    text-align: center;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow var(--transition-speed);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(241, 196, 15, 0.22), transparent 85%);
+    pointer-events: none;
+    border-radius: 26px;
+}
+
+.hero h2 {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 4.4rem;
+    margin-bottom: 32px;
+    letter-spacing: 3.8px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.85);
+    animation: fadeInDown 1.5s ease forwards;
+    user-select: none;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    max-width: 760px;
+    margin: 0 auto;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 0.5s;
+    letter-spacing: 0.03em;
+}
+
+
+/* Animaciones Hero */
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===========================
+   PRODUCTOS - Grid de productos
+============================== */
+
+.productos-grid {
+    max-width: 1140px;
+    margin: 0 auto 140px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 56px;
+    padding: 0 80px;
+    perspective: 1600px;
+}
+
+.producto {
+    background-color: var(--color-card-bg);
+    border-radius: 26px;
+    box-shadow: 0 16px 40px var(--color-shadow-dark);
+    padding: 40px 48px 56px;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.55s ease, background-color 0.45s ease;
+    text-align: center;
+    cursor: default;
+    outline-offset: 8px;
+    will-change: transform;
+    transform-style: preserve-3d;
+    user-select: none;
+}
+
+.producto:hover,
+.producto:focus-within {
+    transform: translateY(-26px) rotateX(6deg) scale(1.12);
+    box-shadow: 0 24px 72px rgba(10, 61, 98, 1);
+    background-color: #151515;
+    outline: none;
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 22px;
+    margin-bottom: 34px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.95));
+    transition: transform 0.5s ease;
+    backface-visibility: hidden;
+    user-select: none;
+}
+
+.producto:hover img {
+    transform: scale(1.18) rotateZ(2deg);
+}
+
+.producto h3 {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 2.3rem;
+    color: var(--color-accent);
+    margin-bottom: 26px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px var(--color-accent);
+    transition: color 0.4s ease;
+    user-select: none;
+}
+
+.producto p {
+    font-size: 1.25rem;
+    color: #bbb;
+    margin-bottom: 36px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    user-select: none;
+}
+
+
+/* ===========================
+   BOTÓN COMPRAR - estilo elegante y moderno
+============================== */
+
+.comprar-btn {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 20px 56px;
+    color: var(--color-primary);
+    background-color: transparent;
+    border: 4px solid var(--color-accent);
+    border-radius: 48px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 24px var(--color-accent);
+    text-decoration: none;
+    display: inline-block;
+    user-select: none;
+}
+
+.comprar-btn:hover,
+.comprar-btn:focus-visible {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    box-shadow: 0 0 40px var(--color-accent-light);
+    transform: scale(1.12);
+    outline: none;
+}
+
+
+/* ===========================
+   FOOTER - simple y sobrio
+============================== */
+
+footer {
+    background-color: #1b1b1b;
+    text-align: center;
+    padding: 32px 20px;
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--color-primary);
+    user-select: none;
+    letter-spacing: 0.03em;
+}
+
+
+/* ===========================
+   Responsive - móvil y tablets
+============================== */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 40px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 24px;
+    }
+    .hero {
+        padding: 60px 40px;
+        margin: 60px 24px 80px;
+    }
+    .productos-grid {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+        gap: 48px;
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h2 {
+        font-size: 2.8rem;
+    }
+    .producto h3 {
+        font-size: 1.6rem;
+    }
+    .comprar-btn {
+        padding: 16px 36px;
+        font-size: 1rem;
+    }
+}

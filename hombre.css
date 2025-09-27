@@ -1,0 +1,343 @@
+/* Fuente premium */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Reset básico */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+    color: #eee;
+    min-height: 100vh;
+}
+
+
+/* Título principal */
+
+h1 {
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 3.4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #f2f2f2;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.1), 0 0 15px #8a2be2aa;
+}
+
+
+/* Galería */
+
+.galeria {
+    max-width: 1300px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+
+/* Tarjeta */
+
+.perfume {
+    background: linear-gradient(145deg, #292929, #1b1b1b);
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px #0d0d0d, -10px -10px 30px #3a3a3a;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+
+/* Animación de aparición */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.perfume:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 20px 20px 40px #050505, -20px -20px 40px #4b3aff;
+}
+
+
+/* Imagen con zoom en hover */
+
+.perfume img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.perfume:hover img {
+    transform: scale(1.12);
+}
+
+
+/* Información */
+
+.info {
+    padding: 25px 20px 35px;
+    text-align: center;
+    color: #ddd;
+}
+
+.info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: #e0d9ff;
+    text-shadow: 0 0 6px #8a2be2cc;
+}
+
+.info p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #b0a8d8;
+    font-weight: 500;
+}
+
+
+/* Botón Comprar con efecto neumorphism invertido */
+
+.info a {
+    display: inline-block;
+    padding: 12px 36px;
+    background: #1a1a1a;
+    border-radius: 40px;
+    color: #a49fff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    box-shadow: inset 2px 2px 5px #2f2f2f, inset -2px -2px 5px #0d0d0d;
+    transition: all 0.3s ease;
+}
+
+.info a:hover {
+    color: #fff;
+    box-shadow: 4px 4px 12px #7f7aff, -4px -4px 12px #918aff;
+    background: linear-gradient(135deg, #4a47ff, #7b76ff);
+    transform: scale(1.1);
+    text-shadow: 0 0 8px #c3bfff;
+}
+
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.4rem;
+        letter-spacing: 3px;
+        margin: 40px 0 30px;
+    }
+    .galeria {
+        padding: 0 20px;
+        gap: 25px;
+    }
+    .perfume img {
+        height: 260px;
+    }
+    .info h2 {
+        font-size: 1.4rem;
+    }
+    .info p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Fuente premium */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Reset básico */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f1419 0%, #1c1f26 100%);
+    color: #ddd;
+    min-height: 100vh;
+}
+
+
+/* Título principal */
+
+h1 {
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #a0c4ff;
+    text-shadow: 0 0 5px #5a7bd8, 0 0 10px #5a7bd8aa;
+}
+
+
+/* Galería */
+
+.galeria {
+    max-width: 1300px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+
+/* Tarjeta */
+
+.perfume {
+    background: linear-gradient(145deg, #222831, #1a1e23);
+    border-radius: 16px;
+    box-shadow: 5px 5px 15px #0a0c0f, -5px -5px 15px #2c3138;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+
+/* Animación de aparición */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.perfume:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 0 20px #3a68d1, 10px 10px 30px #0b1b40, -10px -10px 30px #3a68d1aa;
+}
+
+
+/* Imagen con zoom */
+
+.perfume img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 16px 16px 0 0;
+    box-shadow: inset 0 0 8px #2244aa;
+}
+
+.perfume:hover img {
+    transform: scale(1.12);
+    box-shadow: 0 0 20px #3a68d1cc;
+}
+
+
+/* Información */
+
+.info {
+    padding: 25px 20px 35px;
+    text-align: center;
+    color: #cfd8ff;
+}
+
+.info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #84a9ff;
+    text-shadow: 0 0 6px #3a68d1cc;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.perfume:hover .info h2 {
+    color: #aacbff;
+    text-shadow: 0 0 10px #558aff;
+}
+
+.info p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #a5b8ff;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+
+
+/* Botón Comprar */
+
+.info a {
+    display: inline-block;
+    padding: 12px 36px;
+    background: linear-gradient(135deg, #3a68d1, #2244aa);
+    border-radius: 40px;
+    color: #dbe4ff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    box-shadow: 0 0 8px #3a68d1, inset 0 0 10px #2244aaaa;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.info a:hover {
+    background: linear-gradient(135deg, #558aff, #2f57d6);
+    box-shadow: 0 0 15px #558aff, inset 0 0 15px #2f57d6cc;
+    transform: scale(1.1);
+    color: #eef4ff;
+    text-shadow: 0 0 8px #aacbff;
+}
+
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.8rem;
+        letter-spacing: 3px;
+        margin: 40px 0 30px;
+    }
+    .galeria {
+        padding: 0 20px;
+        gap: 28px;
+    }
+    .perfume img {
+        height: 260px;
+    }
+    .info h2 {
+        font-size: 1.5rem;
+    }
+    .info p {
+        font-size: 1.1rem;
+    }
+    .info a {
+        padding: 10px 30px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tienda de Perfumes | Estilo Masculino</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            background-color: #2b2b6b;
+            display: flex;
+        }
+        
+        nav ul li {
+            position: relative;
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav ul li a:hover {
+            background-color: #444;
+        }
+        /* Submenú */
+        
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #3a3a3a;
+            min-width: 180px;
+        }
+        
+        nav ul li:hover ul {
+            display: block;
+        }
+        
+        nav ul li ul li a {
+            padding: 12px 16px;
+        }
+        
+        nav ul li ul li a:hover {
+            background-color: #5a5a5a;
+        }
+        /* Estilos para los botones comprar */
+        
+        .comprar-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            color: #6a0dad;
+            /* Morado */
+            border: 2px solid #6a0dad;
+            border-radius: 8px;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px rgba(106, 13, 173, 0.4);
+            cursor: pointer;
+        }
+        
+        .comprar-btn:hover {
+            background-color: #6a0dad;
+            color: white;
+            box-shadow: 0 0 15px #6a0dad;
+            transform: scale(1.05);
+        }
+        /* Opcional: Para que el grid se vea mejor */
+        
+        .productos-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .producto {
+            background-color: #1c1c1c;
+            color: #f5d142;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 0 10px #6a0dad55;
+            transition: transform 0.3s ease;
+        }
+        
+        .producto:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px #6a0dadcc;
+        }
+        
+        .producto img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        
+        .producto h3 {
+            margin: 15px 0 8px;
+            font-size: 1.3rem;
+            color: #f5d142;
+        }
+        
+        .producto p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Tienda de Perfumes</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#productos">Productos</a>
+                    <ul>
+                        <li><a href="hombre.html">Hombre</a></li>
+                        <li><a href="mujer.html">Mujer</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero" aria-label="Sección principal">
+            <h2>Perfumes con carácter y estilo</h2>
+            <p>
+                Descubre fragancias diseñadas para hombres que dejan una impresión duradera. Aromas profundos, sofisticados y modernos para cada ocasión.
+            </p>
+        </section>
+
+        <section id="productos" aria-label="Productos destacados">
+            <h2>Productos Destacados</h2>
+            <div class="productos-grid">
+                <article class="producto" tabindex="0">
+                    <img src="IMAGENESDEPERFUMES/perfume1.jpg" alt="Perfume Amaderado Clásico" />
+                    <h3>Amaderado Clásico</h3>
+                    <p>$65.00</p>
+                    <a href="https://api.whatsapp.com/send?phone=51991251667&text=Hola,%20quiero%20comprar%20el%20Perfume%209%20por%65.00" target="_blank" class="comprar-btn">Comprar</a>
+                </article>
+
+                <article class="producto" tabindex="0">
+                    <img src="IMAGENESDEPERFUMES/perfume2.jpg" alt="Perfume Cítrico Energizante" />
+                    <h3>Cítrico Energizante</h3>
+                    <p>$55.00</p>
+                    <a href="https://api.whatsapp.com/send?phone=51991251667&text=Hola,%20quiero%20comprar%20el%20Perfume%209%20por%55.00" target="_blank" class="comprar-btn">Comprar</a>
+                </article>
+
+                <article class="producto" tabindex="0">
+                    <img src="IMAGENESDEPERFUMES/perfume3.jpg" alt="Perfume Especiado Intenso" />
+                    <h3>Especiado Intenso</h3>
+                    <p>$75.00</p>
+                    <a href="https://api.whatsapp.com/send?phone=51991251667&text=Hola,%20quiero%20comprar%20el%20Perfume%209%20por%75.00" target="_blank" class="comprar-btn">Comprar</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;2025 Tienda de Perfumes | derecho de autor José Rodrigo Mantilla Medina</p>
+    </footer>
+</body>
+
+</html>
